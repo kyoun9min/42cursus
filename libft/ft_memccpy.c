@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 11:44:45 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/08 11:50:40 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/21 20:49:45 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	i = 0;
 	dst1 = (unsigned char *)dst;
 	src1 = (unsigned char *)src;
-	c1 = (unsigned char *)c;
+	c1 = (unsigned char)c;
 	while (i < n)
 	{
 		*(dst1 + i) = *(src1 + i);
