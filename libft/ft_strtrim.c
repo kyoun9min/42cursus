@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 20:25:57 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/21 21:03:50 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/22 08:40:15 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t	get_end_index(char const *s1, char const *set)
 		else
 			break ;
 	}
-	return (s1_len - 1 - i);
+	return (s1_len - i);
 }
 
 char			*ft_strtrim(char const *s1, char const *set)
@@ -58,9 +58,9 @@ char			*ft_strtrim(char const *s1, char const *set)
 	end = get_end_index(s1, set);
 	if (start >= end)
 		return (ft_strdup(""));
-	result = (char *)malloc(sizeof(char) * end - start + 2);
+	result = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!result)
 		return (0);
-	ft_strlcpy(result, s1 + start, end - start + 2);
+	ft_strlcpy(result, s1 + start, end - start + 1);
 	return (result);
 }

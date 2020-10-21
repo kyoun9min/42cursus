@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 19:43:36 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/21 23:18:29 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/22 08:27:40 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*result;
 	size_t	s1_len;
 	size_t	s2_len;
-	size_t	i;
 
 	if (!s1 && !s2)
 		return (0);
@@ -26,13 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (!result)
 		return (0);
-	result = ft_strdup(s1);
-	i = 0;
-	while (i < s1_len + s2_len)
-	{
-		result[s1_len + i] = s2[i];
-		i++;
-	}
-	result[i] = 0;
+	strlcpy(result, s1, s1_len + 1);
+	strlcat(result + s1_len, s2, s2_len + 1);
 	return (result);
 }
