@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: kyounkim <kyounkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 20:16:11 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/23 00:48:58 by kyounkim         ###   ########.fr       */
+/*   Created: 2020/10/22 21:54:03 by kyounkim          #+#    #+#             */
+/*   Updated: 2020/10/22 22:08:25 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*s;
-
-	if (fd < 0)
+	if (!lst || !f)
 		return ;
-	s = ft_itoa(n);
-	write(fd, s, ft_strlen(s));
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

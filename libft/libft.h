@@ -6,13 +6,12 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 18:22:55 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/21 20:39:57 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/23 01:23:22 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
 

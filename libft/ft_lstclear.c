@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: kyounkim <kyounkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 20:16:11 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/23 00:48:58 by kyounkim         ###   ########.fr       */
+/*   Created: 2020/10/22 21:36:53 by kyounkim          #+#    #+#             */
+/*   Updated: 2020/10/22 22:06:02 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	char	*s;
+	t_list	*curr;
+	t_list	*next;
 
-	if (fd < 0)
+	if (!lst || !del)
 		return ;
-	s = ft_itoa(n);
-	write(fd, s, ft_strlen(s));
+	curr = *lst;
+	*lst = 0;
+	while (curr)
+	{
+		next = curr->next;
+		ft_lstdelone(curr, del);
+		curr = next;
+	}
 }

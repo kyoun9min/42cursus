@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 19:43:36 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/22 08:27:40 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/23 01:25:42 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (!result)
 		return (0);
-	strlcpy(result, s1, s1_len + 1);
-	strlcat(result + s1_len, s2, s2_len + 1);
+	ft_strlcpy(result, s1, s1_len + 1);
+	ft_strlcat(result + s1_len, s2, s2_len + 1);
 	return (result);
 }

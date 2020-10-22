@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: kyounkim <kyounkim@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 20:16:11 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/23 00:48:58 by kyounkim         ###   ########.fr       */
+/*   Created: 2020/10/22 21:06:50 by kyounkim          #+#    #+#             */
+/*   Updated: 2020/10/23 01:15:15 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*s;
-
-	if (fd < 0)
+	if (!lst || new)
 		return ;
-	s = ft_itoa(n);
-	write(fd, s, ft_strlen(s));
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	ft_lstlast(*lst)->next = new;
 }
