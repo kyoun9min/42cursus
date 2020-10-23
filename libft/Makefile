@@ -9,15 +9,6 @@ FILES		= ft_atoi.c \
 			  ft_isdigit.c \
 			  ft_isprint.c \
 			  ft_itoa.c \
-			  ft_lstadd_back.c \
-			  ft_lstadd_front.c \
-			  ft_lstclear.c \
-			  ft_lstdelone.c \
-			  ft_lstiter.c \
-			  ft_lstlast.c \
-			  ft_lstmap.c \
-			  ft_lstnew.c \
-			  ft_lstsize.c \
 			  ft_memccpy.c \
 			  ft_memchr.c \
 			  ft_memcmp.c \
@@ -43,14 +34,31 @@ FILES		= ft_atoi.c \
 			  ft_substr.c \
 			  ft_tolower.c \
 			  ft_toupper.c
-OBJ			= $(FILES:%.c=%.o)
-all: $(NAME)
-$(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-$(OBJ): $(FILES)
+
+FILES_B		= ft_lstadd_back.c \
+			  ft_lstadd_front.c \
+			  ft_lstclear.c \
+			  ft_lstdelone.c \
+			  ft_lstiter.c \
+			  ft_lstlast.c \
+			  ft_lstmap.c \
+			  ft_lstnew.c \
+			  ft_lstsize.c
+
+OBJS			= $(FILES:.c=.o)
+OBJS_B			= $(FILES_B:.c=.o)
+
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+$(OBJS): $(FILES)
 	gcc $(CFLAGS) $(FILES)
+$(OBJS_B): $(FILES_B)
+	gcc $(CFLAGS) $(FILES_B)
+all: $(NAME)
+bonus: $(OBJS_B)
+	ar rcs $(NAME) $(OBJS_B)
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJS) $(OBJS_B)
 fclean: clean
 	rm -f $(NAME)
 re: fclean all

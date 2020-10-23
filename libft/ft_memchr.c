@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 11:59:14 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/08 12:09:59 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/23 18:04:10 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*s1;
 	unsigned char	c1;
 
-	if (!s)
-		return (0);
 	i = 0;
 	s1 = (unsigned char *)s;
 	c1 = (unsigned char)c;

@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 12:12:06 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/08 12:21:22 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/23 18:04:31 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*s3;
 	unsigned char	*s4;
 
-	if (!s1 || !s2)
-		return (0);
 	i = 0;
 	s3 = (unsigned char *)s1;
 	s4 = (unsigned char *)s2;
