@@ -6,18 +6,18 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 16:03:58 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/21 17:07:18 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/26 18:09:31 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		**malloc_free(char **result)
+static char		**malloc_free(char **result, size_t idx)
 {
 	size_t	i;
 
 	i = 0;
-	while (result[i])
+	while (i < idx + 1)
 	{
 		free(result[i]);
 		i++;
@@ -67,7 +67,7 @@ char			**ft_split(char const *s, char c)
 			while (s[i] && s[i] != c)
 				i++;
 			if (!(result[idx] = (char *)malloc(sizeof(char) * (i - start + 1))))
-				return (malloc_free(result));
+				return (malloc_free(result, idx));
 			ft_strlcpy(result[idx++], &s[start], i - start + 1);
 		}
 		else
