@@ -1,5 +1,6 @@
 NAME		= libft.a
-CFLAGS		= -Wall -Werror -Wextra -c
+CC			= gcc
+CFLAGS		= -Wall -Werror -Wextra
 FILES		= ft_atoi.c \
 			  ft_bzero.c \
 			  ft_calloc.c \
@@ -50,10 +51,8 @@ OBJS_B			= $(FILES_B:.c=.o)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-$(OBJS): $(FILES)
-	gcc $(CFLAGS) $(FILES)
-$(OBJS_B): $(FILES_B)
-	gcc $(CFLAGS) $(FILES_B)
+.c.o: $(FILES)
+	$(CC) $(CFLAGS) -c $<
 all: $(NAME)
 bonus: $(OBJS_B)
 	ar rcs $(NAME) $(OBJS_B)
