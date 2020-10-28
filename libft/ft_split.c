@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 16:03:58 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/10/26 18:09:31 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/10/29 02:03:34 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char		**malloc_free(char **result, size_t idx)
 	size_t	i;
 
 	i = 0;
-	while (i < idx + 1)
+	while (i < idx)
 	{
 		free(result[i]);
 		i++;
