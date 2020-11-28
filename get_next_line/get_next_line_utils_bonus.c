@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 18:28:42 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/11/27 22:51:47 by kyounkim         ###   ########.fr       */
+/*   Created: 2020/11/28 15:35:43 by kyounkim          #+#    #+#             */
+/*   Updated: 2020/11/28 15:37:46 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
 {

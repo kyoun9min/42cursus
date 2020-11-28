@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/24 11:06:30 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/11/28 15:24:09 by kyounkim         ###   ########.fr       */
+/*   Created: 2020/11/28 15:35:36 by kyounkim          #+#    #+#             */
+/*   Updated: 2020/11/28 15:38:10 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	return_line(char **backup, char **line, char *newline_ptr)
 {
