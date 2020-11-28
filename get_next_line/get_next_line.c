@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 11:06:30 by kyounkim          #+#    #+#             */
-/*   Updated: 2020/11/28 15:24:09 by kyounkim         ###   ########.fr       */
+/*   Updated: 2020/11/28 20:56:48 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	get_next_line(int fd, char **line)
 	int			read_size;
 	char		*newline_ptr;
 
+	read_size = 0;
 	if ((fd < 0) || (line == 0) || (BUFFER_SIZE <= 0))
 		return (-1);
 	if (!(backup[fd]))
