@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 22:28:31 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/16 03:20:56 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/16 03:28:44 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ void	put_minus_and_width(long long nbr, t_info *info, char **buf)
 	if (info->nbr_sign == -1)
 	{
 		*buf = ft_strjoin("-", *buf, 2);
-		put_width(info, *buf);
+		put_width(info, buf);
 	}
 	else
 	{
-		put_width(info, *buf);
+		put_width(info, buf);
 		if (ft_nbrlen(nbr, info) >= info->width)
 			*buf = ft_strjoin("-", *buf, 2);
 		else
