@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:47:34 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/16 03:10:55 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/16 03:21:46 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	put_prec_str(char *str, t_info *info, char **buf);
 int		print_nbr(long long nbr, t_info *info);
 void	put_prec_nbr(long long nbr, t_info *info, char **buf);
 void	put_minus_and_width(long long nbr, t_info *info, char **buf);
-int		put_pointer_prefix(char **buf);
+void	put_pointer_prefix(char **buf);
 void	put_width(t_info *info, char **buf);
 char	*ft_baseset(char type);
 int		ft_nbrlen(long long nbr, t_info *info);

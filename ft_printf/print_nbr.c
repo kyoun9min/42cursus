@@ -6,13 +6,13 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 22:28:31 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/16 03:12:12 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/16 03:20:56 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		put_pointer_prefix(char **buf)
+void		put_pointer_prefix(char **buf)
 {
 	*buf = ft_strjoin("0x", *buf, 2);
 }
@@ -22,11 +22,11 @@ void	put_minus_and_width(long long nbr, t_info *info, char **buf)
 	if (info->nbr_sign == -1)
 	{
 		*buf = ft_strjoin("-", *buf, 2);
-		put_width(info, &buf);
+		put_width(info, *buf);
 	}
 	else
 	{
-		put_width(info, &buf);
+		put_width(info, *buf);
 		if (ft_nbrlen(nbr, info) >= info->width)
 			*buf = ft_strjoin("-", *buf, 2);
 		else
@@ -66,7 +66,6 @@ int		print_nbr(long long nbr, t_info *info)
 {
 	char	*buf;
 	int		buf_len;
-	int		result;
 
 	if (info->prec > -1)
 		info->zero = 0;
