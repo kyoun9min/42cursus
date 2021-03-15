@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 19:43:36 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/15 22:36:57 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/16 03:31:41 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ char	*ft_strjoin(char const *s1, char const *s2, int free_target)
 		return (0);
 	ft_strlcpy(result, s1, s1_len + 1);
 	if (free_target == 1 || free_target == 3)
-		free(s1);
+		free((char *)s1);
 	ft_strlcpy(result + s1_len, s2, s2_len + 1);
 	if (free_target == 2 || free_target == 3)
-		free(s2);
+		free((char *)s2);
 	return (result);
 }
