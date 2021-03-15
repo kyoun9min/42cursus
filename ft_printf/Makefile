@@ -6,7 +6,7 @@
 #    By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 01:58:21 by kyounkim          #+#    #+#              #
-#    Updated: 2021/03/16 02:59:37 by kyounkim         ###   ########.fr        #
+#    Updated: 2021/03/16 03:14:59 by kyounkim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CFLAGS		= -Wall -Wextra -Werror
 SRCS		= ./ft_printf.c \
 			  ./print_type.c \
 			  ./ft_printf_utils.c \
-			  ./princ_char.c \
+			  ./print_char.c \
 			  ./print_str.c \
 			  ./print_nbr.c
 
