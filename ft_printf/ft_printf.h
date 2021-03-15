@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:47:34 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/16 01:57:54 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/16 03:10:55 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct	s_info
 int		ft_printf(const char *format, ...);
 int		parse_format(va_list ap, char *format);
 void	check_info(va_list ap, char *format, t_info *info, int i);
-void	check_width_and_prec(va_list ap, char *format, t_info *info, int i);
-void	check_asterisk(va_list ap, char *format, t_info *info, int i);
+void	check_width_and_prec(char *format, t_info *info, int i);
+void	check_asterisk(va_list ap, t_info *info);
 int		print_type(va_list ap, t_info *info);
 int		print_char(int c, t_info *info);
 int		print_string(char *str, t_info *info);

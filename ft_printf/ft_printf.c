@@ -6,13 +6,13 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:47:24 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/16 01:57:54 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/16 03:10:00 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	check_asterisk(va_list ap, char *format, t_info *info, int i)
+void	check_asterisk(va_list ap, t_info *info)
 {
 	if (info->prec == -1)
 	{
@@ -31,7 +31,7 @@ void	check_asterisk(va_list ap, char *format, t_info *info, int i)
 	}
 }
 
-void	check_width_and_prec(va_list ap, char *format, t_info *info, int i)
+void	check_width_and_prec(char *format, t_info *info, int i)
 {
 	if (info->prec == -1)
 		info->width = info->width * 10 + format[i] - 48;
@@ -66,9 +66,9 @@ void	check_info(va_list ap, char *format, t_info *info, int i)
 		info->prec = 0;
 	}
 	else if (ft_isdigit(format[i]))
-		check_width_and_prec(ap, format, info, i);
+		check_width_and_prec(format, info, i);
 	else if (format[i] == '*')
-		check_asterisk(ap, format, info, i);
+		check_asterisk(ap, info);
 }
 
 int		parse_format(va_list ap, char *format)
