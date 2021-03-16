@@ -45,7 +45,7 @@ clean :
 	make clean -C ./libft
 
 fclean : clean
-	$(RM) $(OBJS)
+	$(RM) $(NAME)
 	make fclean -C ./libft
 
 re : fclean all

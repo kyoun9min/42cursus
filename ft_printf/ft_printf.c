@@ -79,7 +79,7 @@ int		parse_format(va_list ap, char *format)
 
 	i = 0;
 	result = 0;
-	if ((info = malloc(sizeof(t_info) * 1)) == '\0')
+	if (!(info = malloc(sizeof(t_info) * 1)))
 		return (-1);
 	while (format[i] != '\0')
 	{
@@ -88,9 +88,9 @@ int		parse_format(va_list ap, char *format)
 		else
 		{
 			if (format[++i] == '\0')
-				return result;
+				return (result);
 			init_info(info);
-			while ((ft_strchr(TYPE, format[i])) == '\0')
+			while (!(ft_strchr(TYPE, format[i])))
 				check_info(ap, format, info, i);
 			info->type = format[i++];
 			result += print_type(ap, info);

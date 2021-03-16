@@ -24,7 +24,7 @@ void	put_prec_str(char *str, t_info *info, char **buf)
 	else
 		buf_len = info->prec;
 	if (!(*buf = (char *)malloc(sizeof(char) * buf_len + 1)))
-		return;
+		return ;
 	i = 0;
 	while (i < buf_len)
 	{

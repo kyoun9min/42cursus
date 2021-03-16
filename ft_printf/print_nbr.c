@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void		put_pointer_prefix(char **buf)
+void	put_pointer_prefix(char **buf)
 {
 	*buf = ft_strjoin("0x", *buf, 2);
 }
@@ -46,7 +46,7 @@ void	put_prec_nbr(long long nbr, t_info *info, char **buf)
 	else
 		buf_len = nbr_len;
 	if (!(*buf = (char *)malloc(sizeof(char) * buf_len + 1)))
-		return;
+		return ;
 	i = 0;
 	(*buf)[buf_len] = '\0';
 	while (i < buf_len - nbr_len)
@@ -72,8 +72,10 @@ int		print_nbr(long long nbr, t_info *info)
 	if (info->type == 'x' || info->type == 'X' || info->type == 'p')
 		info->nbr_base = 16;
 	if ((info->type == 'd' || info->type == 'i') && (int)nbr < 0)
+	{
 		info->nbr_sign = -1;
 		nbr = -nbr;
+	}
 	put_prec_nbr(nbr, info, &buf);
 	if (info->nbr_sign == -1)
 		put_minus_and_width(nbr, info, &buf);

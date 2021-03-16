@@ -58,9 +58,9 @@ void	put_width(t_info *info, char **buf)
 
 	buf_len = (int)ft_strlen(*buf);
 	if (info->width <= buf_len)
-		return;
-	if(!(width = (char *)malloc(sizeof(char) * (info->width - buf_len + 1))))
-		return;
+		return ;
+	if (!(width = (char *)malloc(sizeof(char) * (info->width - buf_len + 1))))
+		return ;
 	i = 0;
 	while (i < info->width - buf_len)
 	{
