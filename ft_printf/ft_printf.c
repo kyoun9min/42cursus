@@ -91,7 +91,7 @@ int		parse_format(va_list ap, char *format)
 				return (result);
 			init_info(info);
 			while (!(ft_strchr(TYPE, format[i])))
-				check_info(ap, format, info, i);
+				check_info(ap, format, info, i++);
 			info->type = format[i++];
 			result += print_type(ap, info);
 		}
