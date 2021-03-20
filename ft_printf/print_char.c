@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 22:15:44 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/07 06:58:58 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/19 13:27:35 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	print_char(int c, t_info *info)
 	result = 0;
 	if (info->minus == 1)
 		result += ft_putchar(c);
-	while (info->width != 1)
+	while (info->width > 1)
 	{
 		if (info->zero == 1)
 			ft_putchar('0');

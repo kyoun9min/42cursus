@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 22:28:31 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/16 03:28:44 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/19 13:27:54 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	put_pointer_prefix(char **buf)
 
 void	put_minus_and_width(long long nbr, t_info *info, char **buf)
 {
-	if (info->nbr_sign == -1)
+	if (info->zero == 0)
 	{
 		*buf = ft_strjoin("-", *buf, 2);
 		put_width(info, buf);
