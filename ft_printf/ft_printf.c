@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:47:24 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/16 03:10:00 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/21 13:55:13 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,7 @@ void	check_asterisk(va_list ap, t_info *info)
 		}
 	}
 	else
-	{
 		info->prec = va_arg(ap, int);
-		if (info->prec < 0)
-			info->prec = -1;
-	}
 }
 
 void	check_width_and_prec(char *format, t_info *info, int i)
@@ -59,10 +55,7 @@ void	check_info(va_list ap, char *format, t_info *info, int i)
 	else if (format[i] == '.')
 	{
 		if (format[++i] == '-')
-		{
 			info->neg_prec = 1;
-			info->minus = 1;
-		}
 		info->prec = 0;
 	}
 	else if (ft_isdigit(format[i]))
@@ -88,7 +81,7 @@ int		parse_format(va_list ap, char *format)
 		else
 		{
 			if (format[++i] == '\0')
-				return (result);
+				break ;
 			init_info(info);
 			while (!(ft_strchr(TYPE, format[i])))
 				check_info(ap, format, info, i++);

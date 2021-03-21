@@ -6,7 +6,7 @@
 #    By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/16 01:58:21 by kyounkim          #+#    #+#              #
-#    Updated: 2021/03/16 03:14:59 by kyounkim         ###   ########.fr        #
+#    Updated: 2021/03/21 19:39:35 by kyounkim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ LIBFT		= ./libft/libft.a
 
 AR			= ar
 ARFLAGS		= rcs
-INCS		= .
 RM			= rm -f
 LIBC		= ar rcs
 CC			= gcc
