@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:47:24 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/21 13:55:13 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/21 21:44:33 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	check_asterisk(va_list ap, t_info *info)
 		if (info->width < 0)
 		{
 			info->minus = 1;
+			info->zero = 0;
 			info->width *= -1;
 		}
 	}

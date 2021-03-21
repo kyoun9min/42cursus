@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 23:18:36 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/21 19:39:26 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/21 20:48:45 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	put_prec_str(char *str, t_info *info, char **buf)
 		(*buf)[i] = str[i];
 		i++;
 	}
-	*buf[i] = '\0';
+	(*buf)[i] = '\0';
 }
 
 int		print_string(char *str, t_info *info)
