@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 22:28:31 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/19 13:27:54 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/23 00:32:02 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,12 @@ int		print_nbr(long long nbr, t_info *info)
 		nbr = -nbr;
 	}
 	put_prec_nbr(nbr, info, &buf);
+	if (info->type == 'p')
+		put_pointer_prefix(&buf);
 	if (info->nbr_sign == -1)
 		put_minus_and_width(nbr, info, &buf);
 	else
 		put_width(info, &buf);
-	if (info->type == 'p')
-		put_pointer_prefix(&buf);
 	ft_putstr(buf);
 	buf_len = (int)ft_strlen(buf);
 	free(buf);

@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 23:18:36 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/21 20:48:45 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/22 23:42:24 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		print_string(char *str, t_info *info)
 
 	if (str == NULL)
 		str = "(null)";
-	if (info->prec == -1 || info->prec > (int)ft_strlen(str))
+	if (info->prec == -1 || (size_t)info->prec > ft_strlen(str))
 		info->prec = (int)ft_strlen(str);
 	put_prec_str(str, info, &buf);
 	put_width(info, &buf);
