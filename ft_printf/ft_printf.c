@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/20 16:47:24 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/03/21 21:44:33 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/03/22 11:49:48 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	check_asterisk(va_list ap, t_info *info)
 		if (info->width < 0)
 		{
 			info->minus = 1;
-			info->zero = 0;
 			info->width *= -1;
 		}
 	}
@@ -48,11 +47,7 @@ void	check_info(va_list ap, char *format, t_info *info, int i)
 	if (format[i] == '-')
 		info->minus = 1;
 	else if (format[i] == '0' && info->width == 0)
-	{
-		if (info->minus == 1)
-			info->zero = 0;
 		info->zero = 1;
-	}
 	else if (format[i] == '.')
 	{
 		if (format[++i] == '-')
@@ -81,12 +76,12 @@ int		parse_format(va_list ap, char *format)
 			result += ft_putchar(format[i++]);
 		else
 		{
-			if (format[++i] == '\0')
-				break ;
 			init_info(info);
-			while (!(ft_strchr(TYPE, format[i])))
-				check_info(ap, format, info, i++);
+			while (format[++i] != '\0' && !(ft_strchr(TYPE, format[i])))
+				check_info(ap, format, info, i);
 			info->type = format[i++];
+			if (info->minus == 1)
+				info->zero = 0;
 			result += print_type(ap, info);
 		}
 	}
