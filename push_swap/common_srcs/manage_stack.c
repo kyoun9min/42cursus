@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 15:57:11 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/06/22 20:10:51 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/06/29 16:59:36 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*create_stack(int n)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = (t_stack *)malloc(sizeof(t_stack));
 	node->n = n;
@@ -24,7 +24,7 @@ t_stack	*create_stack(int n)
 
 int		get_stack_size(t_stack **head)
 {
-	t_stack *node;
+	t_stack	*node;
 	int		size;
 
 	node = (*head);
@@ -39,20 +39,23 @@ int		get_stack_size(t_stack **head)
 	return (size);
 }
 
-void	add_stack_front(t_stack **head, t_stack *new_node)
+void	add_stack_top(t_stack **head, t_stack *new_node)
 {
 	new_node->next = (*head);
 	(*head) = new_node;
 }
 
-void	add_stack_back(t_stack **head, t_stack *new_node)
+void	add_stack_bottom(t_stack **head, t_stack *new_node)
 {
 	t_stack	*node;
 
 	node = (*head);
 	if ((*head) == NULL)
 		(*head) = node;
-	while (node->next != NULL)
-		node = node->next;
-	node->next = node;
+	else
+	{
+		while (node->next != NULL)
+			node = node->next;
+		node->next = node;
+	}
 }

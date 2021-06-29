@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 13:44:04 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/06/29 17:29:22 by kyounkim         ###   ########.fr       */
+/*   Created: 2021/06/29 14:51:39 by kyounkim          #+#    #+#             */
+/*   Updated: 2021/06/29 14:51:54 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *s1)
 {
-	t_stack	*a;
-	t_stack	*b;
-	t_op	*op;
-	int		stack_size;
+	char	*result;
+	size_t	i;
+	size_t	s1_len;
 
-	a = NULL;
-	b = NULL;
-	op = NULL;
-	if (!(check_argv_and_add_stack(&a, argc, argv)))
-		return (write_error());
-	stack_size = get_stack_size(&a);
-	if (sorted_check_a(&a))
+	s1_len = ft_strlen(s1);
+	result = (char *)malloc(sizeof(char) * (s1_len + 1));
+	if (!result)
 		return (0);
-	if (stack_size <= 3)
-		sort_just_three_a(&a, &op, stack_size);
+	i = 0;
+	while (i < s1_len)
+	{
+		result[i] = s1[i];
+		i++;
+	}
+	result[i] = 0;
+	return (result);
 }

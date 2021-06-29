@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:49:09 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/06/22 17:34:39 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/06/29 17:01:24 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int	check_isdigit(char *str)
 {
 	int	i;
+	int	flag;
 
 	i = 0;
+	flag = 0;
 	if (str[i] == '\0')
 		return (1);
 	while (str[i] == '\f' || str[i] == '\t' || str[i] == ' ' ||
@@ -25,35 +27,38 @@ int	check_isdigit(char *str)
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
+	{
+		flag = 1;
 		i++;
-	if (str[i] == '\0')
-		return (0);
-	return (1);
+	}
+	if (str[i] == '\0' && flag == 1)
+		return (1);
+	return (0);
 }
 
 int	check_int_range(long long n)
 {
 	if (n > INT_MAX || n < INT_MIN)
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }
 
-int	duplicate_check(t_stack **a)
+int	check_duplication(t_stack **a)
 {
-	t_stack *a_x;
-	t_stack *a_y;
+	t_stack	*a_x;
+	t_stack	*a_y;
 
-	a_y = (*a);
-	while (a_y != NULL)
+	a_x = (*a);
+	while (a_x != NULL)
 	{
-		a_x = a_y->next;
-		while (a_x != NULL)
+		a_y = a_x->next;
+		while (a_y != NULL)
 		{
-			if (a_y->n == a_x->n)
+			if (a_x->n == a_y->n)
 				return (1);
-			a_x = a_x->next;
+			a_y = a_y->next;
 		}
-		a_y = a_y->next;
+		a_x = a_x->next;
 	}
 	return (0);
 }
@@ -65,18 +70,18 @@ int	check_argv_and_add_stack(t_stack **a, int argc, char **argv)
 
 	i = argc - 1;
 	if (i == 0)
-		return (1);
+		return (0);
 	while (i)
 	{
-		if (check_isdigit(argv[i]))
-			return (1);
+		if (!(check_isdigit(argv[i])))
+			return (0);
 		n = ft_atoll(argv[i]);
-		if (check_int_range(n))
-			return (1);
-		add_stack_front(a, create_stack((int)n));
+		if (!(check_int_range(n)))
+			return (0);
+		add_stack_top(a, create_stack((int)n));
 		i--;
 	}
-	if (duplicate_check(a))
-		return (1);
-	return (0);
+	if (check_duplication(a))
+		return (0);
+	return (1);
 }
