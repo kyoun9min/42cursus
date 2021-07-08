@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:49:09 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/06/29 17:01:24 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/07/08 19:39:08 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	check_isdigit(char *str)
 	i = 0;
 	flag = 0;
 	if (str[i] == '\0')
-		return (1);
-	while (str[i] == '\f' || str[i] == '\t' || str[i] == ' ' ||
-			str[i] == '\n' || str[i] == '\r' || str[i] == '\v')
+		return (0);
+	while (str[i] == '\f' || str[i] == '\t' || str[i] == ' '
+		|| str[i] == '\n' || str[i] == '\r' || str[i] == '\v')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;

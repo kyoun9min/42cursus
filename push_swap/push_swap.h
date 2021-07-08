@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/06/22 15:48:50 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/07/08 19:39:29 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef struct		s_stack
+typedef struct s_stack
 {
 	int				n;
 	struct s_stack	*next;
 }					t_stack;
 
-typedef struct	s_op
+typedef struct s_op
 {
 	char		*s;
 	struct s_op	*next;

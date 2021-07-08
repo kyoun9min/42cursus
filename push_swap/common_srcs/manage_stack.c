@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 15:57:11 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/06/29 16:59:36 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/07/08 19:42:09 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack	*create_stack(int n)
 	return (node);
 }
 
-int		get_stack_size(t_stack **head)
+int	get_stack_size(t_stack **head)
 {
 	t_stack	*node;
 	int		size;

@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 14:09:46 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/06/29 16:08:59 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/07/08 19:40:47 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	add_op_list_front(t_op **head, t_op *new_node)
 	(*head) = new_node;
 }
 
-void	add_op_list_back(t_op ** head, t_op *new_node)
+void	add_op_list_back(t_op **head, t_op *new_node)
 {
 	t_op	*node;
 
@@ -43,7 +43,7 @@ void	add_op_list_back(t_op ** head, t_op *new_node)
 	}
 }
 
-void	add_op_list_middle(t_op **head, t_op *new_node , int n)
+void	add_op_list_middle(t_op **head, t_op *new_node, int n)
 {
 	t_op	*node;
 	t_op	*temp;
