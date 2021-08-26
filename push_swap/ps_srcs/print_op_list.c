@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   print_op_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 22:50:46 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/25 22:50:46 by kyounkim         ###   ########.fr       */
+/*   Created: 2021/08/25 22:13:00 by kyounkim          #+#    #+#             */
+/*   Updated: 2021/08/25 22:13:00 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
 #include "../push_swap.h"
 
-char	*ft_strdup(char *s)
+void	print_op_list(t_op **op)
 {
-	int		i;
-	int		s_len;
-	char	*result;
+	t_op *i;
 
-	i = 0;
-	s_len = ft_strlen(s);
-	result = (char *)malloc(sizeof(char) * (s_len + 1));
-	while (i < s_len)
+	i = (*op);
+	while (i != NULL)
 	{
-		result[i] = s[i];
-		i++;
+		if (i->s != NULL)
+		{
+			write(1, i->s, ft_strlen(i->s));
+			write(1, "\n", 1);
+		}
+		i = i->next;
 	}
-	result[i] = '\0';
-	return (result);
 }

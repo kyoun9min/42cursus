@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   get_pivot.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 22:50:46 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/25 22:50:46 by kyounkim         ###   ########.fr       */
+/*   Created: 2021/08/23 13:11:35 by kyounkim          #+#    #+#             */
+/*   Updated: 2021/08/23 13:11:35 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	*ft_strdup(char *s)
+int	get_hivalue_pivot(t_stack **head, int len)
 {
-	int		i;
-	int		s_len;
-	char	*result;
+	int	*sort;
+	int	mid_value;
 
-	i = 0;
-	s_len = ft_strlen(s);
-	result = (char *)malloc(sizeof(char) * (s_len + 1));
-	while (i < s_len)
-	{
-		result[i] = s[i];
-		i++;
-	}
-	result[i] = '\0';
-	return (result);
+	sort = get_stack_array(head, len);
+	quick_sort(sort, 0, len - 1);
+	mid_value = sort[2 * len / 3];
+	free(sort);
+	return (mid_value);
+}
+
+int	get_lowvalue_pivot(t_stack **head, int len)
+{
+	int	*sort;
+	int	mid_value;
+
+	sort = get_stack_array(head, len);
+	quick_sort(sort, 0, len - 1);
+	mid_value = sort[len / 3];
+	free(sort);
+	return (mid_value);
 }

@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   sort_just_six.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 22:50:46 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/25 22:50:46 by kyounkim         ###   ########.fr       */
+/*   Created: 2021/08/19 16:33:24 by kyounkim          #+#    #+#             */
+/*   Updated: 2021/08/19 16:33:24 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	*ft_strdup(char *s)
+void	sort_just_six(t_stack **a, t_stack **b, t_op **op, int stack_size)
 {
-	int		i;
-	int		s_len;
-	char	*result;
+	int	mid;
+	int	i;
+	int	count_pb;
 
+	mid = get_mid_value(a, stack_size);
 	i = 0;
-	s_len = ft_strlen(s);
-	result = (char *)malloc(sizeof(char) * (s_len + 1));
-	while (i < s_len)
+	count_pb = 0;
+	while (i < stack_size)
 	{
-		result[i] = s[i];
+		if ((*a)->n < mid)
+		{
+			get_op_list(op, "pb", a, b);
+			count_pb++;
+		}
+		else
+			get_op_list(op, "ra", a, b);
 		i++;
 	}
-	result[i] = '\0';
-	return (result);
+	sort_just_three_a(a, op);
+	sort_just_three_b(b, op);
+	while (count_pb--)
+		get_op_list(op, "pa", a, b);
 }

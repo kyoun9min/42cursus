@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   free_stack_operation.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/25 22:50:46 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/25 22:50:46 by kyounkim         ###   ########.fr       */
+/*   Created: 2021/08/25 22:00:35 by kyounkim          #+#    #+#             */
+/*   Updated: 2021/08/25 22:00:35 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char	*ft_strdup(char *s)
+void	free_stack(t_stack **a)
 {
-	int		i;
-	int		s_len;
-	char	*result;
+	t_stack	*i;
+	t_stack	*temp;
 
-	i = 0;
-	s_len = ft_strlen(s);
-	result = (char *)malloc(sizeof(char) * (s_len + 1));
-	while (i < s_len)
+	i = (*a);
+	while (i != NULL)
 	{
-		result[i] = s[i];
-		i++;
+		temp = i;
+		i = i->next;
+		free(temp);
 	}
-	result[i] = '\0';
-	return (result);
+}
+
+void	free_operation(t_op **op)
+{
+	t_op	*i;
+	t_op	*temp;
+
+	i = (*op);
+	while (i != NULL)
+	{
+		temp = i;
+		i = i->next;
+		free(temp->s);
+		free(temp);
+	}
 }

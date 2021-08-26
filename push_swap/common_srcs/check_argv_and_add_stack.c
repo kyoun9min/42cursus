@@ -6,11 +6,17 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:49:09 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/07/08 19:39:08 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/23 13:08:05 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	write_error(void)
+{
+	write(1, "Error\n", 6);
+	return (1);
+}
 
 int	check_isdigit(char *str)
 {
@@ -78,7 +84,7 @@ int	check_argv_and_add_stack(t_stack **a, int argc, char **argv)
 		n = ft_atoll(argv[i]);
 		if (!(check_int_range(n)))
 			return (0);
-		add_stack_top(a, create_stack((int)n));
+		add_stack_top(a, create_stack_node((int)n));
 		i--;
 	}
 	if (check_duplication(a))

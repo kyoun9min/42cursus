@@ -6,13 +6,13 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 17:43:28 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/07/08 19:53:55 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/26 10:45:15 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap(int *arr, int i, int j)
+void	q_sort_swap(int *arr, int i, int j)
 {
 	int	temp;
 
@@ -33,10 +33,10 @@ int	partition(int *arr, int start, int end)
 	while (j <= end - 1)
 	{
 		if (arr[j] < value)
-			swap(arr, ++i, j);
+			q_sort_swap(arr, ++i, j);
 		j++;
 	}
-	swap(arr, i + 1, end);
+	q_sort_swap(arr, i + 1, end);
 	return (i + 1);
 }
 

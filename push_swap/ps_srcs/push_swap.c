@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:44:04 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/07/08 19:39:24 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/25 22:32:06 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,13 @@ int	main(int argc, char **argv)
 		return (0);
 	if (stack_size <= 3)
 		sort_just_three_a(&a, &op, stack_size);
+	else if (stack_size <= 6)
+		sort_just_six(&a, &b, &op, stack_size);
+	else
+		sort_main_a(&a, &b, &op, stack_size);
+	minimize_op_list(&op);
+	print_op_list(&op);
+	free_stack(&a);
+	free_operation(&op);
+	return (0);
 }

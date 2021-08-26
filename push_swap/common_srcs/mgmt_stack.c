@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   manage_stack.c                                     :+:      :+:    :+:   */
+/*   mgmt_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 15:57:11 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/07/08 19:42:09 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/23 13:08:03 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	*create_stack(int n)
+t_stack	*create_stack_node(int n)
 {
 	t_stack	*node;
 

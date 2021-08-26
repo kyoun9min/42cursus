@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   manage_op_list.c                                   :+:      :+:    :+:   */
+/*   mgmt_op_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 14:09:46 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/07/08 19:40:47 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/25 19:34:40 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ void	add_op_list_middle(t_op **head, t_op *new_node, int n)
 	t_op	*temp;
 
 	node = (*head);
-	if (n == 1)
+	if (n == 0)
 	{
 		add_op_list_front(head, new_node);
 		return ;
 	}
-	n = n - 2;
+	n = n - 1;
 	while (n--)
 		node = node->next;
 	temp = node->next;
@@ -68,14 +68,14 @@ void	del_op_list(t_op **head, int n)
 	t_op	*temp;
 
 	node = (*head);
-	if (n == 1)
+	if (n == 0)
 	{
 		(*head) = (*head)->next;
 		free(node->s);
 		free(node);
 		return ;
 	}
-	n = n - 2;
+	n = n - 1;
 	while (n--)
 		node = node->next;
 	temp = node->next;

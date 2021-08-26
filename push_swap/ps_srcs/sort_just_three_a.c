@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 20:03:02 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/07/08 19:55:00 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/23 11:44:34 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ void	case_two_a(t_stack **a, t_op **op)
 
 void	case_three_a(t_stack **a, t_op **op, int stack_size)
 {
-	int	max_index;
+	int	max_value_index;
 
-	max_index = get_value_index(a, get_max_value(a, stack_size));
-	if (max_index == 0)
+	max_value_index = get_value_index(a, get_max_value(a, stack_size));
+	if (max_value_index == 0)
 	{
 		get_op_list(op, "ra", a, NULL);
 		case_two_a(a, op);
 	}
-	else if (max_index == 1)
+	else if (max_value_index == 1)
 	{
 		get_op_list(op, "rra", a, NULL);
 		case_two_a(a, op);
