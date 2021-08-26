@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/26 13:00:02 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/26 16:54:16 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ typedef struct s_op
 	char		*s;
 	struct s_op	*next;
 }				t_op;
+
+typedef struct s_count
+{
+	int	push;
+	int	count_ra;
+	int	count_rb;
+}				t_count;
 
 void		operation_rr_checker(t_stack **a, t_stack **b, char *s);
 void		operation_checker(t_stack **a, t_stack **b, char *s);
@@ -81,13 +88,12 @@ int			get_min_value(t_stack **head, int stack_size);
 int			get_max_value(t_stack **head, int stack_size);
 int			get_value_index(t_stack **head, int value);
 
-void		sort(t_stack **a, t_stack **b, t_op **op,
-				int stack_size, int *push, int *count_ra, int *count_rb);
+void		init_count(t_count *count);
+void		exe_rrr(t_stack **a, t_stack **b, t_op **op, int count_ra);
+
 int			return_case_a(t_stack **a, t_stack **b, t_op **op, int stack_size);
 void		sort_main_a(t_stack **a, t_stack **b, t_op **op, int stack_size);
 
-void		sort(t_stack **a, t_stack **b, t_op **op,
-				int stack_size, int *push, int *count_ra, int *count_rb);
 int			return_case_b(t_stack **a, t_stack **b, t_op **op, int stack_size);
 void		sort_main_b(t_stack **a, t_stack **b, t_op **op, int stack_size);
 

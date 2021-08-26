@@ -24,21 +24,14 @@ void	sort(t_stack **a, t_stack **b, t_op **op,
 	i = 0;
 	while (i++ < stack_size)
 	{
-		if ((*b)->n >= l_pivot)
+		if ((*b)->n >= get_lowvalue_pivot(b, stack_size) && ++push)
 		{
 			get_op_list(op, "pa", a, b);
-			(*push)++;
-			if ((*a)->n < h_pivot)
-			{
+			if ((*a)->n < get_highvalue_pivot(b, stack_size) && ++count_ra)
 				get_op_list(op, "ra", a, b);
-				(*count_ra)++;
-			}
 		}
-		else
-		{
+		else if ((*b)->n < get_lowvalue_pivot(b, stack_size) && ++count_rb)
 			get_op_list(op, "rb", a, b);
-			(*count_rb)++;
-		}
 	}
 }
 
@@ -68,23 +61,28 @@ int	return_case_b(t_stack **a, t_stack **b, t_op **op, int stack_size)
 
 void	sort_main_b(t_stack **a, t_stack **b, t_op **op, int stack_size)
 {
-	int	*push;
-	int	*count_ra;
-	int	*count_rb;
-	int	i;
+	t_count	count;
+	int		i;
 
-	*push = 0;
-	*count_ra = 0;
-	*count_rb = 0;
+	init_count(&count);
 	i = 0;
 	if (return_case_b(a, b, op, stack_size))
 		return ;
-	sort(a, b, op, stack_size, push, count_ra, count_rb);
-	sort_main_a(a, b, op, *push - *count_ra);
-	while (i++ < *count_ra)
-		get_op_list(op, "rrr", a, b);
-	if (*count_ra > *count_rb)
+	while (i++ < stack_size)
+	{
+		if ((*b)->n >= get_lowvalue_pivot(b, stack_size) && ++count.push)
+		{
+			get_op_list(op, "pa", a, b);
+			if ((*a)->n < get_highvalue_pivot(b, stack_size) && ++count.count_ra)
+				get_op_list(op, "ra", a, b);
+		}
+		else if ((*b)->n < get_lowvalue_pivot(b, stack_size) && ++count.count_rb)
 			get_op_list(op, "rb", a, b);
-	sort_main_a(a, b, op, *count_ra);
-	sort_main_b(a, b, op, stack_size - *push);
+	}
+	sort_main_a(a, b, op, count.push - count.count_ra);
+	exe_rrr(a, b, op, count.count_ra);
+	if (count.count_ra > count.count_rb)
+			get_op_list(op, "rb", a, b);
+	sort_main_a(a, b, op, count.count_ra);
+	sort_main_b(a, b, op, stack_size - count.push);
 }
