@@ -12,97 +12,91 @@
 
 #include "../push_swap.h"
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strndup(char *s, int n)
 {
-	int	i;
+	int		i;
+	char	*dest;
 
 	i = 0;
-	while (s[i])
+	dest = (char *)malloc(sizeof(char) * (n + 1));
+	if (!dest)
+		return (NULL);
+	while (s[i] != '\0' && i < n)
 	{
-		if (s[i] == c)
-			return (s + i);
+		dest[i] = s[i];
 		i++;
 	}
-	if (s[i] == c)
-		return (s + i);
-	return (0);
+	dest[i] = '\0';
+	return (dest);
 }
 
-int	ft_strlcpy(char *dst, char *src, int dstsize)
+char	*ft_strjoin(char *a, char *b)
 {
-	int	i;
+	char	*dest;
+	int		len_a;
+	int		len_b;
+	int		i;
+	int		j;
 
-	i = 0;
-	if (dstsize > 0)
-	{
-		while (src[i] && i < dstsize - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
-	}
-	while (src[i])
-		i++;
-	return (i);
+	len_a = ft_strlen(a);
+	len_b = ft_strlen(b);
+	i = -1;
+	j = -1;
+	dest = (char *)malloc(sizeof(char) * (len_a + len_b + 1));
+	if (!dest)
+		return (NULL);
+	while (++i < len_a)
+		dest[i] = a[i];
+	while (++j < len_b)
+		dest[i++] = b[j];
+	dest[i] = '\0';
+	free(a);
+	return (dest);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+int	get_mid_line(char **line, char **data, int n)
 {
-	int		s1_len;
-	int		s2_len;
-	char	*result;
-
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	result = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
-	ft_strlcpy(result, s1, s1_len + s2_len + 1);
-	free(s1);
-	ft_strlcpy(result + s1_len, s2, s1_len + s2_len + 1);
-	return (result);
+	*line = ft_strndup((*data), n);
+	free(*data);
+	*data = NULL;
+	return (1);
 }
 
-int	return_line(char *backup, char **line, char *newline_ptr)
+int	get_end_line(char **line, char **data)
 {
-	char	*temp;
-
-	if (newline_ptr)
+	if (*data != NULL)
 	{
-		newline_ptr[0] = '\0';
-		*line = ft_strdup(backup);
-		temp = ft_strdup(newline_ptr + 1);
-		free(backup);
-		backup = temp;
-		return (1);
+		*line = *data;
+		*data = NULL;
+		return (0);
 	}
-	else
-	{
-		*line = backup;
-		backup = 0;
-	}
+	*line = ft_strndup("", 0);
 	return (0);
 }
 
 int	get_next_line(char **line)
 {
-	static char	*backup;
-	char		buf[1024];
-	int			read_size;
-	char		*newline_ptr;
+	char		buffer[2];
+	static char	*data;
+	int			byte;
+	int			n;
 
-	read_size = 0;
-	if (line == 0)
+	if (line == NULL)
 		return (-1);
-	if (!(backup))
-		backup = ft_strdup("");
-	newline_ptr = ft_strchr(backup, '\n');
-	read_size = read(0, buf, 1024);
-	while (!(newline_ptr) && (read_size > 0))
+	n = 0;
+	byte = read(0, buffer, 1);
+	while (byte > 0)
 	{
-		buf[read_size] = '\0';
-		backup = ft_strjoin(backup, buf);
+		buffer[byte] = '\0';
+		if (data == NULL)
+			data = ft_strndup(buffer, 1);
+		else
+			data = ft_strjoin(data, buffer);
+		if (buffer[0] == '\n')
+			return (get_mid_line(line, &data, n));
+		n = n + byte;
 	}
-	if (read_size < 0)
+	if (byte < 0)
 		return (-1);
-	return (return_line(backup, line, newline_ptr));
+	return (get_end_line(line, &data));
 }
