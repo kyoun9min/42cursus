@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 15:42:52 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/26 18:04:06 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/26 23:49:03 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ long long	ft_atoll(char *str)
 		num = num * 10 + (str[i] - '0');
 		i++;
 	}
-	num = num *sign;
+	num = num * sign;
 	return (num);
 }
