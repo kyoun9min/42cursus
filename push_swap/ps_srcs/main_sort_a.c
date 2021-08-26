@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	return_case_a(t_stack **a, t_stack **b, t_op **op, int stack_size)
+int	return_case_a(t_stack **a, t_op **op, int stack_size)
 {
 	if (sorted_check_a(a, stack_size))
 		return (1);
@@ -29,27 +29,27 @@ int	return_case_a(t_stack **a, t_stack **b, t_op **op, int stack_size)
 
 void	sort_main_a(t_stack **a, t_stack **b, t_op **op, int stack_size)
 {
-	t_count count;
+	t_count	count;
 	int		i;
 
 	init_count(&count);
 	i = 0;
-	if (return_case_a(a, b, op, stack_size))
+	if (return_case_a(a, op, stack_size))
 		return ;
 	while (i++ < stack_size)
 	{
-		if ((*a)->n < get_highvalue_pivot(a, stack_size) && ++count.push)
+		if ((*a)->n < get_high_pivot(a, stack_size) && ++count.push)
 		{
 			get_op_list(op, "pb", a, b);
-			if ((*b)->n >= get_lowvalue_pivot(a, stack_size) && ++count.count_rb)
+			if ((*b)->n >= get_low_pivot(a, stack_size) && ++count.count_rb)
 				get_op_list(op, "rb", a, b);
 		}
-		else if ((*a)->n >= get_highvalue_pivot(a, stack_size) && ++count.count_ra)
+		else if ((*a)->n >= get_high_pivot(a, stack_size) && ++count.count_ra)
 			get_op_list(op, "ra", a, b);
 	}
 	exe_rrr(a, b, op, count.count_ra);
 	if (count.count_ra > count.count_rb)
-			get_op_list(op, "rb", a, b);
+		get_op_list(op, "rb", a, b);
 	sort_main_a(a, b, op, stack_size - count.push);
 	sort_main_b(a, b, op, count.count_rb);
 	sort_main_b(a, b, op, count.push - count.count_rb);

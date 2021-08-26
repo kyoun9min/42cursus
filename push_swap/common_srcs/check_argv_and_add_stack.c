@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:49:09 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/23 13:08:05 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/26 17:56:55 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	write_error(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	return (1);
 }
 

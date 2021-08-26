@@ -32,8 +32,8 @@ void	sort_just_six(t_stack **a, t_stack **b, t_op **op, int stack_size)
 			get_op_list(op, "ra", a, b);
 		i++;
 	}
-	sort_just_three_a(a, op);
-	sort_just_three_b(b, op);
+	sort_just_three_a(a, op, stack_size);
+	sort_just_three_b(b, op, stack_size);
 	while (count_pb--)
 		get_op_list(op, "pa", a, b);
 }

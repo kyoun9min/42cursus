@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 17:50:14 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/07/08 19:53:03 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/26 17:25:30 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	get_mid_value(t_stack **head, int stack_size)
 	quick_sort(arr, 0, stack_size - 1);
 	mid_value = arr[stack_size / 2];
 	free(arr);
-	retrun (mid_value);
+	return (mid_value);
 }
 
 int	get_min_value(t_stack **head, int stack_size)

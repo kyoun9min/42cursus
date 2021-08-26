@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	get_hivalue_pivot(t_stack **head, int len)
+int	get_high_pivot(t_stack **head, int len)
 {
 	int	*sort;
 	int	mid_value;
@@ -24,7 +24,7 @@ int	get_hivalue_pivot(t_stack **head, int len)
 	return (mid_value);
 }
 
-int	get_lowvalue_pivot(t_stack **head, int len)
+int	get_low_pivot(t_stack **head, int len)
 {
 	int	*sort;
 	int	mid_value;

@@ -89,15 +89,15 @@ int	get_next_line(char **line)
 	char		buf[1024];
 	int			read_size;
 	char		*newline_ptr;
-	int			read_size;
 
 	read_size = 0;
 	if (line == 0)
 		return (-1);
 	if (!(backup))
 		backup = ft_strdup("");
-	while (!(newline_ptr = ft_strchr(backup, '\n'))
-			&& (read_size = read(0, buf, 1024)) > 0)
+	newline_ptr = ft_strchr(backup, '\n');
+	read_size = read(0, buf, 1024);
+	while (!(newline_ptr) && (read_size > 0))
 	{
 		buf[read_size] = '\0';
 		backup = ft_strjoin(backup, buf);

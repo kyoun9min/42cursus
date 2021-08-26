@@ -42,7 +42,7 @@ void	size_discord_case_three_b(t_stack **b, t_op **op, int stack_size)
 		size_discord_case_two_b(b, op);
 }
 
-void	size_discord_b(t_stack **a, t_stack **b, t_op **op, int stack_size)
+void	size_discord_b(t_stack **b, t_op **op, int stack_size)
 {
 	if (stack_size == 2)
 		size_discord_case_two_b(b, op);

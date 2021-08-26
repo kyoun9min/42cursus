@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/26 16:54:16 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/26 17:29:16 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ int			sorted_check_b(t_stack **b, int stack_size);
 
 void		get_op_list(t_op **op, char *s, t_stack **a, t_stack **b);
 
-int			get_hivalue_pivot(t_stack **head, int len);
-int			get_lowvalue_pivot(t_stack **head, int len);
+int			get_high_pivot(t_stack **head, int len);
+int			get_low_pivot(t_stack **head, int len);
 
 int			*get_stack_array(t_stack **head, int stack_size);
 int			get_mid_value(t_stack **head, int stack_size);
@@ -91,7 +91,7 @@ int			get_value_index(t_stack **head, int value);
 void		init_count(t_count *count);
 void		exe_rrr(t_stack **a, t_stack **b, t_op **op, int count_ra);
 
-int			return_case_a(t_stack **a, t_stack **b, t_op **op, int stack_size);
+int			return_case_a(t_stack **a, t_op **op, int stack_size);
 void		sort_main_a(t_stack **a, t_stack **b, t_op **op, int stack_size);
 
 int			return_case_b(t_stack **a, t_stack **b, t_op **op, int stack_size);
@@ -117,7 +117,7 @@ void		size_discord_a(t_stack **a, t_op **op, int stack_size);
 void		size_discord_case_two_b(t_stack **b, t_op **op);
 void		common_op_case_three_b(t_stack **b, t_op **op);
 void		size_discord_case_three_b(t_stack **b, t_op **op, int stack_size);
-void		size_discord_b(t_stack **a, t_stack **b, t_op **op, int stack_size);
+void		size_discord_b(t_stack **b, t_op **op, int stack_size);
 
 void		sort_just_six(t_stack **a, t_stack **b, t_op **op, int stack_size);
 

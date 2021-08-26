@@ -22,12 +22,12 @@ int	get_merge_case(t_op *op)
 		return (2);
 	if (ft_strcmp(op->s, "rrb") && ft_strcmp(op->next->s, "rra"))
 		return (2);
+	return (0);
 }
 
 int	get_merge_operation(t_op **op)
 {
 	t_op	*i;
-	t_op	*new;
 	int		index;
 	int		merge_case;
 
@@ -35,15 +35,15 @@ int	get_merge_operation(t_op **op)
 	index = 0;
 	while (i->next != NULL)
 	{
-		if (merge_case = get_merge_case(i))
+		merge_case = get_merge_case(i);
+		if (merge_case)
 		{
 			del_op_list(op, index);
 			del_op_list(op, index);
 			if (merge_case == 1)
-				new = create_op_list_node("rr");
-			if (merge_case == 2)
-				new = create_op_list_node("rrr");
-			add_op_list_middle(op, new, index);
+				add_op_list_middle(op, create_op_list_node("rr"), index);
+			else if (merge_case == 2)
+				add_op_list_middle(op, create_op_list_node("rrr"), index);
 			return (1);
 		}
 		else
@@ -71,6 +71,7 @@ int	get_delete_case(t_op *op)
 		return (1);
 	if (ft_strcmp(op->s, "sb") && ft_strcmp(op->next->s, "sb"))
 		return (1);
+	return (0);
 }
 
 int	get_delete_operation(t_op **op)

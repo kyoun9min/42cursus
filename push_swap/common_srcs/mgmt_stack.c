@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 15:57:11 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/23 13:08:03 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/26 17:36:12 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ void	add_stack_bottom(t_stack **head, t_stack *new_node)
 
 	node = (*head);
 	if ((*head) == NULL)
-		(*head) = node;
+		(*head) = new_node;
 	else
 	{
 		while (node->next != NULL)
 			node = node->next;
-		node->next = node;
+		node->next = new_node;
 	}
 }
