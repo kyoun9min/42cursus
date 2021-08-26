@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/26 10:50:11 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/26 13:00:02 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int				n;
 	struct s_stack	*next;
 }				t_stack;
 
-typedef struct	s_op
+typedef struct s_op
 {
 	char		*s;
 	struct s_op	*next;
@@ -34,11 +34,11 @@ void		operation_checker(t_stack **a, t_stack **b, char *s);
 
 int			get_next_line(char **line);
 
-int 		ft_strlen(char *s);
-char 		*ft_strchr(char *s, int c);
-char 		*ft_strdup(char *s);
-int 		ft_strlcpy(char *dst, char *src, int dstsize);
-char 		*ft_strjoin(char *s1, char *s2);
+int			ft_strlen(char *s);
+char		*ft_strchr(char *s, int c);
+char		*ft_strdup(char *s);
+int			ft_strlcpy(char *dst, char *src, int dstsize);
+char		*ft_strjoin(char *s1, char *s2);
 long long	ft_atoll(char *str);
 int			ft_strcmp(char *s1, char *s2);
 
