@@ -89,12 +89,12 @@ int	return_line(char *backup, char **line, char *newline_ptr)
 
 int	get_next_line(char **line)
 {
-	static	char *backup;
-	char	buf[1024];
-	char	*newline_ptr;
-	char	*temp;
-	int		read_size = 0;
+	static char	*backup;
+	char		buf[1024];
+	char		*newline_ptr;
+	int			read_size;
 
+	read_size = 0;
 	if (!(backup))
 		backup = ft_strdup("");
 	while (1)
@@ -109,7 +109,7 @@ int	get_next_line(char **line)
 			backup = ft_strjoin(backup, buf);
 		}
 		else
-			break;
+			break ;
 	}
 	if (read_size < 0)
 		return (-1);
