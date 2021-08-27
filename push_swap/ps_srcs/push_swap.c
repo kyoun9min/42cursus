@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:44:04 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/26 17:24:53 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/27 17:08:22 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	if (sorted_check_a(&a, stack_size))
 		return (0);
 	if (stack_size <= 3)
-		sort_just_three_a(&a, &op, stack_size);
+		sort_just_three_a(&a, &op);
 	else if (stack_size <= 6)
 		sort_just_six(&a, &b, &op, stack_size);
 	else
