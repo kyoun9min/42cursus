@@ -21,8 +21,8 @@ SRCS_PS =	./ps_srcs/push_swap.c \
 			./ps_srcs/get_op_list.c \
 			./ps_srcs/get_pivot.c \
 			./ps_srcs/get_value_in_stack.c \
-			./ps_srcs/main_sort_a.c \
-			./ps_srcs/main_sort_b.c \
+			./ps_srcs/sort_main_a.c \
+			./ps_srcs/sort_main_b.c \
 			./ps_srcs/minimize_op_list.c \
 			./ps_srcs/print_op_list.c \
 			./ps_srcs/quick_sort.c \
