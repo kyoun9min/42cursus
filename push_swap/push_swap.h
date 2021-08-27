@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/27 18:54:01 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/28 00:38:09 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ void		operation_checker(t_stack **a, t_stack **b, char *s);
 
 int			get_next_line(char **line);
 
-char		*ft_strndup(char *s, int n);
-char		*ft_strjoin(char *a, char *b);
+char		*ft_strchr(char *s, int c);
+int			ft_strlcpy(char *dst, char *src, int dstsize);
+char		*ft_strjoin(char *s1, char *s2);
 int			ft_strlen(char *s);
 char		*ft_strdup(char *s);
 long long	ft_atoll(char *str);

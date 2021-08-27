@@ -14,7 +14,7 @@
 
 void	size_discord_case_two_a(t_stack **a, t_op **op)
 {
-	if ((*a)->n < (*a)->next->n)
+	if ((*a)->n > (*a)->next->n)
 		get_op_list(op, "sa", a, NULL);
 }
 
