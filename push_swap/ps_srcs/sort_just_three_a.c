@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 20:03:02 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/23 11:44:34 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/27 16:54:29 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ void	case_three_a(t_stack **a, t_op **op, int stack_size)
 		case_two_a(a, op);
 }
 
-void	sort_just_three_a(t_stack **a, t_op **op, int stack_size)
+void	sort_just_three_a(t_stack **a, t_op **op)
 {
+	int	stack_size;
+
+	stack_size = get_stack_size(a);
 	if (stack_size == 2)
 		case_two_a(a, op);
 	else if (stack_size == 3)

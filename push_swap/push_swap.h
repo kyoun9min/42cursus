@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/27 03:00:53 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/27 17:04:49 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,10 +122,10 @@ void		sort_just_six(t_stack **a, t_stack **b, t_op **op, int stack_size);
 
 void		case_two_a(t_stack **a, t_op **op);
 void		case_three_a(t_stack **a, t_op **op, int stack_size);
-void		sort_just_three_a(t_stack **a, t_op **op, int stack_size);
+void		sort_just_three_a(t_stack **a, t_op **op);
 
 void		case_two_b(t_stack **b, t_op **op);
 void		case_three_b(t_stack **b, t_op **op, int stack_size);
-void		sort_just_three_b(t_stack **b, t_op **op, int stack_size);
+void		sort_just_three_b(t_stack **b, t_op **op);
 
 #endif

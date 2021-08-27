@@ -37,8 +37,11 @@ void	case_three_b(t_stack **b, t_op **op, int stack_size)
 		case_two_b(b, op);
 }
 
-void	sort_just_three_b(t_stack **b, t_op **op, int stack_size)
+void	sort_just_three_b(t_stack **b, t_op **op)
 {
+	int	stack_size;
+
+	stack_size = get_stack_size(b);
 	if (stack_size == 2)
 		case_two_b(b, op);
 	else if (stack_size == 3)

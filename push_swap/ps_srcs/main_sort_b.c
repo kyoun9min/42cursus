@@ -26,7 +26,7 @@ int	return_case_b(t_stack **a, t_stack **b, t_op **op, int stack_size)
 	if (stack_size <= 3)
 	{
 		if (stack_size == get_stack_size(b))
-			sort_just_three_b(b, op, stack_size);
+			sort_just_three_b(b, op);
 		else
 			size_discord_b(b, op, stack_size);
 		while (i++ < stack_size)
