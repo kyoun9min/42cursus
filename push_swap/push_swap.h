@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/27 18:48:02 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/27 18:54:01 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int			get_min_value(t_stack **head, int stack_size);
 int			get_max_value(t_stack **head, int stack_size);
 int			get_value_index(t_stack **head, int value);
 
-void		init_count(t_count *count);
+void		init_count(t_count *count, t_stack **x, int stack_size);
 void		exe_rrr(t_stack **a, t_stack **b, t_op **op, int count_ra);
 void		exe_rb(t_stack **b, t_op **op, int count_ra, int count_rb);
 
