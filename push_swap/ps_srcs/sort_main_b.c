@@ -41,25 +41,24 @@ void	sort_main_b(t_stack **a, t_stack **b, t_op **op, int stack_size)
 	t_count	count;
 	int		i;
 
-	init_count(&count);
+	init_count(&count, b, stack_size);
 	i = 0;
 	if (return_case_b(a, b, op, stack_size))
 		return ;
 	while (i++ < stack_size)
 	{
-		if ((*b)->n >= get_low_pivot(b, stack_size) && ++count.push)
+		if ((*b)->n >= count.l_pivot && ++count.push)
 		{
 			get_op_list(op, "pa", a, b);
-			if ((*a)->n < get_high_pivot(b, stack_size) && ++count.count_ra)
+			if ((*a)->n < count.h_pivot && ++count.count_ra)
 				get_op_list(op, "ra", a, NULL);
 		}
-		else if ((*b)->n < get_low_pivot(b, stack_size) && ++count.count_rb)
+		else if ((*b)->n < count.l_pivot && ++count.count_rb)
 			get_op_list(op, "rb", NULL, b);
 	}
 	sort_main_a(a, b, op, count.push - count.count_ra);
 	exe_rrr(a, b, op, count.count_ra);
-	if (count.count_ra > count.count_rb)
-		get_op_list(op, "rb", NULL, b);
+	exe_rb(b, op, count.count_ra, count.count_rb);
 	sort_main_a(a, b, op, count.count_ra);
 	sort_main_b(a, b, op, count.count_rb);
 }

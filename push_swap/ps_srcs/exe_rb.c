@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_count.c                                       :+:      :+:    :+:   */
+/*   exe_rb.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 16:29:54 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/26 16:29:54 by kyounkim         ###   ########.fr       */
+/*   Created: 2021/08/27 18:41:38 by kyounkim          #+#    #+#             */
+/*   Updated: 2021/08/27 18:41:38 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	init_count(t_count *count, t_stack **x, int stack_size)
+void	exe_rb(t_stack **b, t_op **op, int count_ra, int count_rb)
 {
-	count->push = 0;
-	count->count_ra = 0;
-	count->count_rb = 0;
-	count->h_pivot = get_high_pivot(x, stack_size);
-	count->l_pivot = get_low_pivot(x, stack_size);
+	if (count_ra > count_rb)
+		get_op_list(op, "rb", NULL, b);
 }
