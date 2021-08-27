@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/29 17:50:14 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/26 17:25:30 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/27 13:15:07 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	*get_stack_array(t_stack **head, int stack_size)
 
 	arr = (int *)malloc(sizeof(int) * stack_size);
 	if (arr == NULL)
-		return (NULL);
+		return (0);
 	i = 0;
 	node = (*head);
 	while (i < stack_size)

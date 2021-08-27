@@ -24,6 +24,7 @@ void	free_stack(t_stack **a)
 		i = i->next;
 		free(temp);
 	}
+	(*a) = NULL;
 }
 
 void	free_operation(t_op **op)
@@ -39,4 +40,5 @@ void	free_operation(t_op **op)
 		free(temp->s);
 		free(temp);
 	}
+	(*op) = NULL;
 }
