@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/28 00:48:16 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/28 11:12:20 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char		*ft_strdup(char *s);
 long long	ft_atoll(char *str);
 int			ft_strcmp(char *s1, char *s2);
 
+void		init_stack_op(t_stack **a, t_stack **b, t_op **op);
 int			write_error(void);
 int			check_isdigit(char *str);
 int			check_int_range(long long n);

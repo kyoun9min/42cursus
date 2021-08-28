@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:44:04 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/27 17:08:22 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/28 11:12:20 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main(int argc, char **argv)
 	t_op	*op;
 	int		stack_size;
 
-	a = NULL;
-	b = NULL;
-	op = NULL;
+	init_stack_op(&a, &b, &op);
+	if (argc == 1)
+		return (0);
 	if (!(check_argv_and_add_stack(&a, argc, argv)))
 		return (write_error());
 	stack_size = get_stack_size(&a);

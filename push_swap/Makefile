@@ -33,7 +33,8 @@ SRCS_PS =	./ps_srcs/push_swap.c \
 			./ps_srcs/sort_just_three_b.c \
 			./ps_srcs/init_count.c \
 			./ps_srcs/exe_rrr.c \
-			./ps_srcs/exe_rb.c
+			./ps_srcs/exe_rb.c \
+			./ps_srcs/init_stack_op.c
 
 SRCS_CH =	./ck_srcs/checker.c \
 			./ck_srcs/get_next_line.c
