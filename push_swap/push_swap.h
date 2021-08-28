@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:41:37 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/28 11:12:20 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/28 11:47:18 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_count
 }				t_count;
 
 void		operation_rr_checker(t_stack **a, t_stack **b, char *s);
-void		operation_checker(t_stack **a, t_stack **b, char *s);
+int			operation_checker(t_stack **a, t_stack **b, char *s);
 
 int			get_next_line(char **line);
 

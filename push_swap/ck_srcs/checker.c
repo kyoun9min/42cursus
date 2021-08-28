@@ -30,7 +30,7 @@ void	operation_rr_checker(t_stack **a, t_stack **b, char *s)
 	}
 }
 
-void	operation_checker(t_stack **a, t_stack **b, char *s)
+int	operation_checker(t_stack **a, t_stack **b, char *s)
 {
 	if (s[0] == 's' && s[1] == 'a')
 		swap(a);
@@ -46,6 +46,9 @@ void	operation_checker(t_stack **a, t_stack **b, char *s)
 		rotate(b);
 	else if (s[0] == 'r' && s[1] == 'r')
 		operation_rr_checker(a, b, s);
+	else
+		return (0);
+	return (1);
 }
 
 int	main(int argc, char **argv)
@@ -64,7 +67,8 @@ int	main(int argc, char **argv)
 	stack_size = get_stack_size(&a);
 	while (get_next_line(&line) > 0)
 	{
-		operation_checker(&a, &b, line);
+		if(!(operation_checker(&a, &b, line)))
+			return (write_error());
 		free(line);
 	}
 	operation_checker(&a, &b, line);
