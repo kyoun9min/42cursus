@@ -36,6 +36,11 @@ int	operation_checker(t_stack **a, t_stack **b, char *s)
 		swap(a);
 	else if (s[0] == 's' && s[1] == 'b')
 		swap(b);
+	else if (s[0] == 's' && s[1] == 's')
+	{
+		swap(a);
+		swap(b);
+	}
 	else if (s[0] == 'p' && s[1] == 'a')
 		push(a, b);
 	else if (s[0] == 'p' && s[1] == 'b')
