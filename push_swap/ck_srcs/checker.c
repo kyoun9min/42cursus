@@ -60,14 +60,12 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1)
-		return (0);
 	if (!(check_argv_and_add_stack(&a, argc, argv)))
 		return (write_error());
 	stack_size = get_stack_size(&a);
 	while (get_next_line(&line) > 0)
 	{
-		if(!(operation_checker(&a, &b, line)))
+		if (!(operation_checker(&a, &b, line)))
 			return (write_error());
 		free(line);
 	}

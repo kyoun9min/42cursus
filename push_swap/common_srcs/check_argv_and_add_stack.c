@@ -6,7 +6,7 @@
 /*   By: kyounkim <kyounkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 13:49:09 by kyounkim          #+#    #+#             */
-/*   Updated: 2021/08/28 11:12:20 by kyounkim         ###   ########.fr       */
+/*   Updated: 2021/08/28 12:02:06 by kyounkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ int	check_argv_and_add_stack(t_stack **a, int argc, char **argv)
 	long long	n;
 
 	i = argc - 1;
+	if (i == 0)
+		exit(0);
 	while (i)
 	{
 		if (!(check_isdigit(argv[i])))
