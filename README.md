@@ -2,7 +2,6 @@
 42서울 본과정
 
 [![kyounkim's 42 stats](https://badge42.herokuapp.com/api/stats/kyounkim)](https://github.com/JaeSeoKim/badge42)
-[![kyounkim's 42Project Score](https://badge42.herokuapp.com/api/project/kyounkim/ft_printf)](https://github.com/JaeSeoKim/badge42)
 
 ## Common Circle
 
