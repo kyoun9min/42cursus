@@ -4,7 +4,7 @@
 ## Common Circle
 
 | Circle | Project                                | Language | Topics                                                          | Date of Completion |
-| :----: | :------------------------------------- | :------: | :---: | :-------------------------------------------------------------- | :----------------: |
+| :----: | :------------------------------------- | :------: | :-------------------------------------------------------------- | :----------------: |
 |   0    | [**Libft**](./libft)                   |    C     | `library` `Makefile` `linked list`                              |   2020. 10. 26.    |
 |   1    | [**get_next_line**](./get_next_line)   |    C     | `static variable` `file descriptor`                             |   2020. 11. 29.    |
 |   1    | [**ft_printf**](./ft_printf)           |    C     | `variadic arguments` `UTF-8` `bitwise operation`                |   2021. 03. 23.    |
