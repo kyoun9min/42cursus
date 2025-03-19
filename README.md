@@ -1,5 +1,5 @@
 # 42cursus
-42서울 본과정
+42서울 본과정(이 후의 cub3d, minitalk, minishell 등의 과제는 private 저장소에 보관中)
 
 ## Common Circle
 
